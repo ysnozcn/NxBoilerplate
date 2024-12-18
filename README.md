@@ -1,96 +1,160 @@
-# NxBoilerplate
+# NX Boilerplate Project
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+This is a comprehensive monorepo boilerplate built with NX, featuring Next.js, NestJS, and React Native applications. The project uses Biome for code formatting and linting, providing a modern and efficient development environment.
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is ready ✨.
+## 🚀 Features
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/intro#learn-nx?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+- **Monorepo Management**: Powered by NX for efficient workspace management and build optimization
+- **Modern Tooling**: Uses Biome for fast, efficient code formatting and linting
+- **Multiple Applications**: Includes web, API, and mobile applications
+- **Type Safety**: Full TypeScript support across all applications
+- **Testing**: Integrated Playwright for E2E testing
 
-## Run tasks
+## 📦 Project Structure
 
-To run tasks with Nx use:
+The project consists of the following applications:
 
-```sh
-npx nx <target> <project-name>
+```
+apps/
+├── web-app/        # Next.js web application
+├── web-api/        # NestJS backend API
+└── mobile-app/     # React Native mobile application
 ```
 
-For example:
+### Web Application (Next.js)
+- Built with Next.js 14
+- Modern React development with TypeScript
+- CSS styling with Tailwind CSS
+- Server-side rendering capabilities
 
-```sh
-npx nx build myproject
+### Backend API (NestJS)
+- Built with NestJS framework
+- RESTful API architecture
+- TypeScript-based backend development
+- Express.js integration
+
+### Mobile Application (React Native)
+- Cross-platform mobile development
+- Native UI components
+- SVG support with react-native-svg
+- Shared business logic with other applications
+
+## 🛠 Technology Stack
+
+- **Build System**: NX
+- **Code Quality**:
+  - Biome (Formatting & Linting)
+  - TypeScript
+- **Frontend**:
+  - Next.js 14
+  - React 18
+  - Tailwind CSS
+- **Backend**:
+  - NestJS
+  - Express
+- **Mobile**:
+  - React Native
+  - React Native SVG
+- **Testing**:
+  - Playwright
+
+## 🚦 Getting Started
+
+1. **Clone the repository**
+```bash
+git clone [repository-url]
+cd nx-boilerplate
 ```
 
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
-
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Add new projects
-
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
-
-To install a new plugin you can use the `nx add` command. Here's an example of adding the React plugin:
-```sh
-npx nx add @nx/react
+2. **Install dependencies**
+```bash
+npm install
 ```
 
-Use the plugin's generator to create new projects. For example, to create a new React app or library:
+3. **Start development servers**
 
-```sh
-# Generate an app
-npx nx g @nx/react:app demo
-
-# Generate a library
-npx nx g @nx/react:lib some-lib
+For web application:
+```bash
+nx serve web-app
 ```
 
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
-
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Set up CI!
-
-### Step 1
-
-To connect to Nx Cloud, run the following command:
-
-```sh
-npx nx connect
+For API server:
+```bash
+nx serve web-api
 ```
 
-Connecting to Nx Cloud ensures a [fast and scalable CI](https://nx.dev/ci/intro/why-nx-cloud?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) pipeline. It includes features such as:
-
-- [Remote caching](https://nx.dev/ci/features/remote-cache?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task distribution across multiple machines](https://nx.dev/ci/features/distribute-task-execution?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Automated e2e test splitting](https://nx.dev/ci/features/split-e2e-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task flakiness detection and rerunning](https://nx.dev/ci/features/flaky-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-### Step 2
-
-Use the following command to configure a CI workflow for your workspace:
-
-```sh
-npx nx g ci-workflow
+For mobile application:
+```bash
+nx serve mobile-app
 ```
 
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+## 📝 Development Workflow
 
-## Install Nx Console
+### Code Formatting and Linting
+The project uses Biome for code formatting and linting. Run the following commands:
 
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
+```bash
+# Format code
+npm run format
 
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+# Lint code
+npm run lint
 
-## Useful links
+# Check and auto-fix issues
+npm run check
+```
 
-Learn more:
+### Building Applications
 
-- [Learn more about this workspace setup](https://nx.dev/getting-started/intro#learn-nx?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+```bash
+# Build web application
+nx build web-app
 
-And join the Nx community:
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+# Build API server
+nx build web-api
+
+# Build mobile application
+nx build mobile-app
+```
+
+### Running Tests
+
+```bash
+# Run E2E tests
+nx e2e [app-name]
+```
+
+## 🏗 Project Architecture
+
+### NX Workspace
+- Optimized build system with computation caching
+- Efficient dependency management
+- Shared code and libraries between applications
+- Integrated tooling and plugins
+
+### Code Organization
+- Modular architecture
+- Shared types and utilities
+- Consistent coding standards across applications
+- Easy to scale and maintain
+
+## 🔧 Configuration
+
+The project includes several configuration files:
+
+- `nx.json`: NX workspace configuration
+- `package.json`: Project dependencies and scripts
+- `biome.json`: Biome configuration for formatting and linting
+- Application-specific configurations in their respective directories
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a new Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
